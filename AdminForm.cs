@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -363,6 +364,54 @@ namespace BulletScreenVoice
 		{
 			DialogResult = DialogResult.Cancel;
 			Close();
+		}
+
+		private void TabPage8_Paint(object sender, PaintEventArgs e)
+		{
+			string voicesDir = BSVPlugin.instance.voicesDir;
+			textBoxVoicesPath.Text = voicesDir;
+
+			int fileCount = 0;
+			ulong fileSize = 0;
+			if(Directory.Exists(voicesDir))
+			{
+				string[] fileArr = Directory.GetFiles(voicesDir, "*.*");
+				fileCount = fileArr.Length;
+
+				foreach(string filePath in fileArr)
+				{
+					FileInfo fileInf = new FileInfo(filePath);
+					fileSize += (ulong)fileInf.Length;
+				}
+			}
+
+			const ulong KB = 1024;
+			const ulong MB = KB * 1024;
+			const ulong GB = MB * 1024;
+
+			string unitName = "字节";
+
+			if(fileSize >= GB)
+			{
+				fileSize /= GB;
+				unitName = "GB";
+			}
+			else if(fileSize >= MB)
+			{
+				fileSize /= MB;
+				unitName = "MB";
+			}
+			else if(fileSize >= KB)
+			{
+				fileSize /= KB;
+				unitName = "KB";
+			}
+			else
+			{
+				unitName = "字节";
+			}
+
+			labelVoicesStatistic.Text = string.Format("文件 {0} 个，共计 {1} {2}", fileCount, fileSize, unitName);
 		}
 	}
 }

@@ -34,7 +34,7 @@ namespace BulletScreenVoice
 
 		string baseDir;
 		string dataDir;
-		string voicesDir;
+		public string voicesDir;
 		string configFilePath;
 
 		Config config;

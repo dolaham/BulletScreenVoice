@@ -47,32 +47,6 @@
 			this.textBoxTextTemplateCommon = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.checkBoxReadTextCommon = new System.Windows.Forms.CheckBox();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.textBoxTicketTemplateMilord = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.checkBoxReadTicketMilord = new System.Windows.Forms.CheckBox();
-			this.textBoxWelcomeTemplateMilord = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
-			this.checkBoxReadWelcomeMilord = new System.Windows.Forms.CheckBox();
-			this.textBoxGiftTemplateMilord = new System.Windows.Forms.TextBox();
-			this.label13 = new System.Windows.Forms.Label();
-			this.checkBoxReadGiftMilord = new System.Windows.Forms.CheckBox();
-			this.textBoxTextTemplateMilord = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
-			this.checkBoxReadTextMilord = new System.Windows.Forms.CheckBox();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.textBoxTicketTemplateAdmin = new System.Windows.Forms.TextBox();
-			this.label15 = new System.Windows.Forms.Label();
-			this.checkBoxReadTicketAdmin = new System.Windows.Forms.CheckBox();
-			this.textBoxWelcomeTemplateAdmin = new System.Windows.Forms.TextBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.checkBoxReadWelcomeAdmin = new System.Windows.Forms.CheckBox();
-			this.textBoxGiftTemplateAdmin = new System.Windows.Forms.TextBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.checkBoxReadGiftAdmin = new System.Windows.Forms.CheckBox();
-			this.textBoxTextTemplateAdmin = new System.Windows.Forms.TextBox();
-			this.label18 = new System.Windows.Forms.Label();
-			this.checkBoxReadTextAdmin = new System.Windows.Forms.CheckBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.textBoxTicketTemplateViceroy = new System.Windows.Forms.TextBox();
 			this.label19 = new System.Windows.Forms.Label();
@@ -112,6 +86,32 @@
 			this.textBoxTextTemplateCaptain = new System.Windows.Forms.TextBox();
 			this.label30 = new System.Windows.Forms.Label();
 			this.checkBoxReadTextCaptain = new System.Windows.Forms.CheckBox();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.textBoxTicketTemplateMilord = new System.Windows.Forms.TextBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.checkBoxReadTicketMilord = new System.Windows.Forms.CheckBox();
+			this.textBoxWelcomeTemplateMilord = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
+			this.checkBoxReadWelcomeMilord = new System.Windows.Forms.CheckBox();
+			this.textBoxGiftTemplateMilord = new System.Windows.Forms.TextBox();
+			this.label13 = new System.Windows.Forms.Label();
+			this.checkBoxReadGiftMilord = new System.Windows.Forms.CheckBox();
+			this.textBoxTextTemplateMilord = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+			this.checkBoxReadTextMilord = new System.Windows.Forms.CheckBox();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.textBoxTicketTemplateAdmin = new System.Windows.Forms.TextBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.checkBoxReadTicketAdmin = new System.Windows.Forms.CheckBox();
+			this.textBoxWelcomeTemplateAdmin = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.checkBoxReadWelcomeAdmin = new System.Windows.Forms.CheckBox();
+			this.textBoxGiftTemplateAdmin = new System.Windows.Forms.TextBox();
+			this.label17 = new System.Windows.Forms.Label();
+			this.checkBoxReadGiftAdmin = new System.Windows.Forms.CheckBox();
+			this.textBoxTextTemplateAdmin = new System.Windows.Forms.TextBox();
+			this.label18 = new System.Windows.Forms.Label();
+			this.checkBoxReadTextAdmin = new System.Windows.Forms.CheckBox();
 			this.tabPage7 = new System.Windows.Forms.TabPage();
 			this.textBoxLiveBeginTemplate = new System.Windows.Forms.TextBox();
 			this.label32 = new System.Windows.Forms.Label();
@@ -141,20 +141,27 @@
 			this.checkBoxUseCustomeSecret = new System.Windows.Forms.CheckBox();
 			this.buttonOk = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
+			this.tabPage8 = new System.Windows.Forms.TabPage();
+			this.label36 = new System.Windows.Forms.Label();
+			this.textBoxVoicesPath = new System.Windows.Forms.TextBox();
+			this.buttonOpenVoicesPath = new System.Windows.Forms.Button();
+			this.labelVoicesStatistic = new System.Windows.Forms.Label();
+			this.buttonDeleteVoiceFiles = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
 			this.tabControl2.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			this.tabPage2.SuspendLayout();
-			this.tabPage3.SuspendLayout();
 			this.tabPage4.SuspendLayout();
 			this.tabPage5.SuspendLayout();
 			this.tabPage6.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			this.tabPage3.SuspendLayout();
 			this.tabPage7.SuspendLayout();
 			this.tabAudio.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
 			this.tabAdvanced.SuspendLayout();
+			this.tabPage8.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -180,6 +187,7 @@
 			this.tabControl1.Controls.Add(this.tabGeneral);
 			this.tabControl1.Controls.Add(this.tabAudio);
 			this.tabControl1.Controls.Add(this.tabAdvanced);
+			this.tabControl1.Controls.Add(this.tabPage8);
 			this.tabControl1.Location = new System.Drawing.Point(5, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -348,258 +356,6 @@
 			this.checkBoxReadTextCommon.TabIndex = 12;
 			this.checkBoxReadTextCommon.Text = "读出弹幕文本";
 			this.checkBoxReadTextCommon.UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.Controls.Add(this.textBoxTicketTemplateMilord);
-			this.tabPage2.Controls.Add(this.label11);
-			this.tabPage2.Controls.Add(this.checkBoxReadTicketMilord);
-			this.tabPage2.Controls.Add(this.textBoxWelcomeTemplateMilord);
-			this.tabPage2.Controls.Add(this.label12);
-			this.tabPage2.Controls.Add(this.checkBoxReadWelcomeMilord);
-			this.tabPage2.Controls.Add(this.textBoxGiftTemplateMilord);
-			this.tabPage2.Controls.Add(this.label13);
-			this.tabPage2.Controls.Add(this.checkBoxReadGiftMilord);
-			this.tabPage2.Controls.Add(this.textBoxTextTemplateMilord);
-			this.tabPage2.Controls.Add(this.label14);
-			this.tabPage2.Controls.Add(this.checkBoxReadTextMilord);
-			this.tabPage2.Location = new System.Drawing.Point(4, 25);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(765, 222);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "老爷";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// textBoxTicketTemplateMilord
-			// 
-			this.textBoxTicketTemplateMilord.Location = new System.Drawing.Point(238, 125);
-			this.textBoxTicketTemplateMilord.Name = "textBoxTicketTemplateMilord";
-			this.textBoxTicketTemplateMilord.Size = new System.Drawing.Size(507, 25);
-			this.textBoxTicketTemplateMilord.TabIndex = 35;
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(146, 130);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(67, 15);
-			this.label11.TabIndex = 34;
-			this.label11.Text = "船票模板";
-			// 
-			// checkBoxReadTicketMilord
-			// 
-			this.checkBoxReadTicketMilord.AutoSize = true;
-			this.checkBoxReadTicketMilord.Location = new System.Drawing.Point(19, 128);
-			this.checkBoxReadTicketMilord.Name = "checkBoxReadTicketMilord";
-			this.checkBoxReadTicketMilord.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadTicketMilord.TabIndex = 33;
-			this.checkBoxReadTicketMilord.Text = "读出购买船票";
-			this.checkBoxReadTicketMilord.UseVisualStyleBackColor = true;
-			// 
-			// textBoxWelcomeTemplateMilord
-			// 
-			this.textBoxWelcomeTemplateMilord.Location = new System.Drawing.Point(238, 177);
-			this.textBoxWelcomeTemplateMilord.Name = "textBoxWelcomeTemplateMilord";
-			this.textBoxWelcomeTemplateMilord.Size = new System.Drawing.Size(507, 25);
-			this.textBoxWelcomeTemplateMilord.TabIndex = 32;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(146, 182);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(67, 15);
-			this.label12.TabIndex = 31;
-			this.label12.Text = "欢迎模板";
-			// 
-			// checkBoxReadWelcomeMilord
-			// 
-			this.checkBoxReadWelcomeMilord.AutoSize = true;
-			this.checkBoxReadWelcomeMilord.Location = new System.Drawing.Point(19, 180);
-			this.checkBoxReadWelcomeMilord.Name = "checkBoxReadWelcomeMilord";
-			this.checkBoxReadWelcomeMilord.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadWelcomeMilord.TabIndex = 30;
-			this.checkBoxReadWelcomeMilord.Text = "读出欢迎信息";
-			this.checkBoxReadWelcomeMilord.UseVisualStyleBackColor = true;
-			// 
-			// textBoxGiftTemplateMilord
-			// 
-			this.textBoxGiftTemplateMilord.Location = new System.Drawing.Point(238, 73);
-			this.textBoxGiftTemplateMilord.Name = "textBoxGiftTemplateMilord";
-			this.textBoxGiftTemplateMilord.Size = new System.Drawing.Size(507, 25);
-			this.textBoxGiftTemplateMilord.TabIndex = 29;
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(146, 78);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(67, 15);
-			this.label13.TabIndex = 28;
-			this.label13.Text = "礼物模板";
-			// 
-			// checkBoxReadGiftMilord
-			// 
-			this.checkBoxReadGiftMilord.AutoSize = true;
-			this.checkBoxReadGiftMilord.Location = new System.Drawing.Point(19, 76);
-			this.checkBoxReadGiftMilord.Name = "checkBoxReadGiftMilord";
-			this.checkBoxReadGiftMilord.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadGiftMilord.TabIndex = 27;
-			this.checkBoxReadGiftMilord.Text = "读出赠送礼物";
-			this.checkBoxReadGiftMilord.UseVisualStyleBackColor = true;
-			// 
-			// textBoxTextTemplateMilord
-			// 
-			this.textBoxTextTemplateMilord.Location = new System.Drawing.Point(238, 21);
-			this.textBoxTextTemplateMilord.Name = "textBoxTextTemplateMilord";
-			this.textBoxTextTemplateMilord.Size = new System.Drawing.Size(507, 25);
-			this.textBoxTextTemplateMilord.TabIndex = 26;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(146, 26);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(67, 15);
-			this.label14.TabIndex = 25;
-			this.label14.Text = "弹幕模板";
-			// 
-			// checkBoxReadTextMilord
-			// 
-			this.checkBoxReadTextMilord.AutoSize = true;
-			this.checkBoxReadTextMilord.Location = new System.Drawing.Point(19, 24);
-			this.checkBoxReadTextMilord.Name = "checkBoxReadTextMilord";
-			this.checkBoxReadTextMilord.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadTextMilord.TabIndex = 24;
-			this.checkBoxReadTextMilord.Text = "读出弹幕文本";
-			this.checkBoxReadTextMilord.UseVisualStyleBackColor = true;
-			// 
-			// tabPage3
-			// 
-			this.tabPage3.Controls.Add(this.textBoxTicketTemplateAdmin);
-			this.tabPage3.Controls.Add(this.label15);
-			this.tabPage3.Controls.Add(this.checkBoxReadTicketAdmin);
-			this.tabPage3.Controls.Add(this.textBoxWelcomeTemplateAdmin);
-			this.tabPage3.Controls.Add(this.label16);
-			this.tabPage3.Controls.Add(this.checkBoxReadWelcomeAdmin);
-			this.tabPage3.Controls.Add(this.textBoxGiftTemplateAdmin);
-			this.tabPage3.Controls.Add(this.label17);
-			this.tabPage3.Controls.Add(this.checkBoxReadGiftAdmin);
-			this.tabPage3.Controls.Add(this.textBoxTextTemplateAdmin);
-			this.tabPage3.Controls.Add(this.label18);
-			this.tabPage3.Controls.Add(this.checkBoxReadTextAdmin);
-			this.tabPage3.Location = new System.Drawing.Point(4, 25);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(765, 222);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "房管";
-			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// textBoxTicketTemplateAdmin
-			// 
-			this.textBoxTicketTemplateAdmin.Location = new System.Drawing.Point(238, 125);
-			this.textBoxTicketTemplateAdmin.Name = "textBoxTicketTemplateAdmin";
-			this.textBoxTicketTemplateAdmin.Size = new System.Drawing.Size(507, 25);
-			this.textBoxTicketTemplateAdmin.TabIndex = 35;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(146, 130);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(67, 15);
-			this.label15.TabIndex = 34;
-			this.label15.Text = "船票模板";
-			// 
-			// checkBoxReadTicketAdmin
-			// 
-			this.checkBoxReadTicketAdmin.AutoSize = true;
-			this.checkBoxReadTicketAdmin.Location = new System.Drawing.Point(19, 128);
-			this.checkBoxReadTicketAdmin.Name = "checkBoxReadTicketAdmin";
-			this.checkBoxReadTicketAdmin.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadTicketAdmin.TabIndex = 33;
-			this.checkBoxReadTicketAdmin.Text = "读出购买船票";
-			this.checkBoxReadTicketAdmin.UseVisualStyleBackColor = true;
-			// 
-			// textBoxWelcomeTemplateAdmin
-			// 
-			this.textBoxWelcomeTemplateAdmin.Location = new System.Drawing.Point(238, 177);
-			this.textBoxWelcomeTemplateAdmin.Name = "textBoxWelcomeTemplateAdmin";
-			this.textBoxWelcomeTemplateAdmin.Size = new System.Drawing.Size(507, 25);
-			this.textBoxWelcomeTemplateAdmin.TabIndex = 32;
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(146, 182);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(67, 15);
-			this.label16.TabIndex = 31;
-			this.label16.Text = "欢迎模板";
-			// 
-			// checkBoxReadWelcomeAdmin
-			// 
-			this.checkBoxReadWelcomeAdmin.AutoSize = true;
-			this.checkBoxReadWelcomeAdmin.Location = new System.Drawing.Point(19, 180);
-			this.checkBoxReadWelcomeAdmin.Name = "checkBoxReadWelcomeAdmin";
-			this.checkBoxReadWelcomeAdmin.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadWelcomeAdmin.TabIndex = 30;
-			this.checkBoxReadWelcomeAdmin.Text = "读出欢迎信息";
-			this.checkBoxReadWelcomeAdmin.UseVisualStyleBackColor = true;
-			// 
-			// textBoxGiftTemplateAdmin
-			// 
-			this.textBoxGiftTemplateAdmin.Location = new System.Drawing.Point(238, 73);
-			this.textBoxGiftTemplateAdmin.Name = "textBoxGiftTemplateAdmin";
-			this.textBoxGiftTemplateAdmin.Size = new System.Drawing.Size(507, 25);
-			this.textBoxGiftTemplateAdmin.TabIndex = 29;
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(146, 78);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(67, 15);
-			this.label17.TabIndex = 28;
-			this.label17.Text = "礼物模板";
-			// 
-			// checkBoxReadGiftAdmin
-			// 
-			this.checkBoxReadGiftAdmin.AutoSize = true;
-			this.checkBoxReadGiftAdmin.Location = new System.Drawing.Point(19, 76);
-			this.checkBoxReadGiftAdmin.Name = "checkBoxReadGiftAdmin";
-			this.checkBoxReadGiftAdmin.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadGiftAdmin.TabIndex = 27;
-			this.checkBoxReadGiftAdmin.Text = "读出赠送礼物";
-			this.checkBoxReadGiftAdmin.UseVisualStyleBackColor = true;
-			// 
-			// textBoxTextTemplateAdmin
-			// 
-			this.textBoxTextTemplateAdmin.Location = new System.Drawing.Point(238, 21);
-			this.textBoxTextTemplateAdmin.Name = "textBoxTextTemplateAdmin";
-			this.textBoxTextTemplateAdmin.Size = new System.Drawing.Size(507, 25);
-			this.textBoxTextTemplateAdmin.TabIndex = 26;
-			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.Location = new System.Drawing.Point(146, 26);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(67, 15);
-			this.label18.TabIndex = 25;
-			this.label18.Text = "弹幕模板";
-			// 
-			// checkBoxReadTextAdmin
-			// 
-			this.checkBoxReadTextAdmin.AutoSize = true;
-			this.checkBoxReadTextAdmin.Location = new System.Drawing.Point(19, 24);
-			this.checkBoxReadTextAdmin.Name = "checkBoxReadTextAdmin";
-			this.checkBoxReadTextAdmin.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadTextAdmin.TabIndex = 24;
-			this.checkBoxReadTextAdmin.Text = "读出弹幕文本";
-			this.checkBoxReadTextAdmin.UseVisualStyleBackColor = true;
 			// 
 			// tabPage4
 			// 
@@ -979,6 +735,258 @@
 			this.checkBoxReadTextCaptain.Text = "读出弹幕文本";
 			this.checkBoxReadTextCaptain.UseVisualStyleBackColor = true;
 			// 
+			// tabPage2
+			// 
+			this.tabPage2.Controls.Add(this.textBoxTicketTemplateMilord);
+			this.tabPage2.Controls.Add(this.label11);
+			this.tabPage2.Controls.Add(this.checkBoxReadTicketMilord);
+			this.tabPage2.Controls.Add(this.textBoxWelcomeTemplateMilord);
+			this.tabPage2.Controls.Add(this.label12);
+			this.tabPage2.Controls.Add(this.checkBoxReadWelcomeMilord);
+			this.tabPage2.Controls.Add(this.textBoxGiftTemplateMilord);
+			this.tabPage2.Controls.Add(this.label13);
+			this.tabPage2.Controls.Add(this.checkBoxReadGiftMilord);
+			this.tabPage2.Controls.Add(this.textBoxTextTemplateMilord);
+			this.tabPage2.Controls.Add(this.label14);
+			this.tabPage2.Controls.Add(this.checkBoxReadTextMilord);
+			this.tabPage2.Location = new System.Drawing.Point(4, 25);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(765, 222);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "老爷";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// textBoxTicketTemplateMilord
+			// 
+			this.textBoxTicketTemplateMilord.Location = new System.Drawing.Point(238, 125);
+			this.textBoxTicketTemplateMilord.Name = "textBoxTicketTemplateMilord";
+			this.textBoxTicketTemplateMilord.Size = new System.Drawing.Size(507, 25);
+			this.textBoxTicketTemplateMilord.TabIndex = 35;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(146, 130);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(67, 15);
+			this.label11.TabIndex = 34;
+			this.label11.Text = "船票模板";
+			// 
+			// checkBoxReadTicketMilord
+			// 
+			this.checkBoxReadTicketMilord.AutoSize = true;
+			this.checkBoxReadTicketMilord.Location = new System.Drawing.Point(19, 128);
+			this.checkBoxReadTicketMilord.Name = "checkBoxReadTicketMilord";
+			this.checkBoxReadTicketMilord.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadTicketMilord.TabIndex = 33;
+			this.checkBoxReadTicketMilord.Text = "读出购买船票";
+			this.checkBoxReadTicketMilord.UseVisualStyleBackColor = true;
+			// 
+			// textBoxWelcomeTemplateMilord
+			// 
+			this.textBoxWelcomeTemplateMilord.Location = new System.Drawing.Point(238, 177);
+			this.textBoxWelcomeTemplateMilord.Name = "textBoxWelcomeTemplateMilord";
+			this.textBoxWelcomeTemplateMilord.Size = new System.Drawing.Size(507, 25);
+			this.textBoxWelcomeTemplateMilord.TabIndex = 32;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(146, 182);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(67, 15);
+			this.label12.TabIndex = 31;
+			this.label12.Text = "欢迎模板";
+			// 
+			// checkBoxReadWelcomeMilord
+			// 
+			this.checkBoxReadWelcomeMilord.AutoSize = true;
+			this.checkBoxReadWelcomeMilord.Location = new System.Drawing.Point(19, 180);
+			this.checkBoxReadWelcomeMilord.Name = "checkBoxReadWelcomeMilord";
+			this.checkBoxReadWelcomeMilord.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadWelcomeMilord.TabIndex = 30;
+			this.checkBoxReadWelcomeMilord.Text = "读出欢迎信息";
+			this.checkBoxReadWelcomeMilord.UseVisualStyleBackColor = true;
+			// 
+			// textBoxGiftTemplateMilord
+			// 
+			this.textBoxGiftTemplateMilord.Location = new System.Drawing.Point(238, 73);
+			this.textBoxGiftTemplateMilord.Name = "textBoxGiftTemplateMilord";
+			this.textBoxGiftTemplateMilord.Size = new System.Drawing.Size(507, 25);
+			this.textBoxGiftTemplateMilord.TabIndex = 29;
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(146, 78);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(67, 15);
+			this.label13.TabIndex = 28;
+			this.label13.Text = "礼物模板";
+			// 
+			// checkBoxReadGiftMilord
+			// 
+			this.checkBoxReadGiftMilord.AutoSize = true;
+			this.checkBoxReadGiftMilord.Location = new System.Drawing.Point(19, 76);
+			this.checkBoxReadGiftMilord.Name = "checkBoxReadGiftMilord";
+			this.checkBoxReadGiftMilord.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadGiftMilord.TabIndex = 27;
+			this.checkBoxReadGiftMilord.Text = "读出赠送礼物";
+			this.checkBoxReadGiftMilord.UseVisualStyleBackColor = true;
+			// 
+			// textBoxTextTemplateMilord
+			// 
+			this.textBoxTextTemplateMilord.Location = new System.Drawing.Point(238, 21);
+			this.textBoxTextTemplateMilord.Name = "textBoxTextTemplateMilord";
+			this.textBoxTextTemplateMilord.Size = new System.Drawing.Size(507, 25);
+			this.textBoxTextTemplateMilord.TabIndex = 26;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(146, 26);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(67, 15);
+			this.label14.TabIndex = 25;
+			this.label14.Text = "弹幕模板";
+			// 
+			// checkBoxReadTextMilord
+			// 
+			this.checkBoxReadTextMilord.AutoSize = true;
+			this.checkBoxReadTextMilord.Location = new System.Drawing.Point(19, 24);
+			this.checkBoxReadTextMilord.Name = "checkBoxReadTextMilord";
+			this.checkBoxReadTextMilord.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadTextMilord.TabIndex = 24;
+			this.checkBoxReadTextMilord.Text = "读出弹幕文本";
+			this.checkBoxReadTextMilord.UseVisualStyleBackColor = true;
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.textBoxTicketTemplateAdmin);
+			this.tabPage3.Controls.Add(this.label15);
+			this.tabPage3.Controls.Add(this.checkBoxReadTicketAdmin);
+			this.tabPage3.Controls.Add(this.textBoxWelcomeTemplateAdmin);
+			this.tabPage3.Controls.Add(this.label16);
+			this.tabPage3.Controls.Add(this.checkBoxReadWelcomeAdmin);
+			this.tabPage3.Controls.Add(this.textBoxGiftTemplateAdmin);
+			this.tabPage3.Controls.Add(this.label17);
+			this.tabPage3.Controls.Add(this.checkBoxReadGiftAdmin);
+			this.tabPage3.Controls.Add(this.textBoxTextTemplateAdmin);
+			this.tabPage3.Controls.Add(this.label18);
+			this.tabPage3.Controls.Add(this.checkBoxReadTextAdmin);
+			this.tabPage3.Location = new System.Drawing.Point(4, 25);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(765, 222);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "房管";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// textBoxTicketTemplateAdmin
+			// 
+			this.textBoxTicketTemplateAdmin.Location = new System.Drawing.Point(238, 125);
+			this.textBoxTicketTemplateAdmin.Name = "textBoxTicketTemplateAdmin";
+			this.textBoxTicketTemplateAdmin.Size = new System.Drawing.Size(507, 25);
+			this.textBoxTicketTemplateAdmin.TabIndex = 35;
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(146, 130);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(67, 15);
+			this.label15.TabIndex = 34;
+			this.label15.Text = "船票模板";
+			// 
+			// checkBoxReadTicketAdmin
+			// 
+			this.checkBoxReadTicketAdmin.AutoSize = true;
+			this.checkBoxReadTicketAdmin.Location = new System.Drawing.Point(19, 128);
+			this.checkBoxReadTicketAdmin.Name = "checkBoxReadTicketAdmin";
+			this.checkBoxReadTicketAdmin.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadTicketAdmin.TabIndex = 33;
+			this.checkBoxReadTicketAdmin.Text = "读出购买船票";
+			this.checkBoxReadTicketAdmin.UseVisualStyleBackColor = true;
+			// 
+			// textBoxWelcomeTemplateAdmin
+			// 
+			this.textBoxWelcomeTemplateAdmin.Location = new System.Drawing.Point(238, 177);
+			this.textBoxWelcomeTemplateAdmin.Name = "textBoxWelcomeTemplateAdmin";
+			this.textBoxWelcomeTemplateAdmin.Size = new System.Drawing.Size(507, 25);
+			this.textBoxWelcomeTemplateAdmin.TabIndex = 32;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(146, 182);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(67, 15);
+			this.label16.TabIndex = 31;
+			this.label16.Text = "欢迎模板";
+			// 
+			// checkBoxReadWelcomeAdmin
+			// 
+			this.checkBoxReadWelcomeAdmin.AutoSize = true;
+			this.checkBoxReadWelcomeAdmin.Location = new System.Drawing.Point(19, 180);
+			this.checkBoxReadWelcomeAdmin.Name = "checkBoxReadWelcomeAdmin";
+			this.checkBoxReadWelcomeAdmin.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadWelcomeAdmin.TabIndex = 30;
+			this.checkBoxReadWelcomeAdmin.Text = "读出欢迎信息";
+			this.checkBoxReadWelcomeAdmin.UseVisualStyleBackColor = true;
+			// 
+			// textBoxGiftTemplateAdmin
+			// 
+			this.textBoxGiftTemplateAdmin.Location = new System.Drawing.Point(238, 73);
+			this.textBoxGiftTemplateAdmin.Name = "textBoxGiftTemplateAdmin";
+			this.textBoxGiftTemplateAdmin.Size = new System.Drawing.Size(507, 25);
+			this.textBoxGiftTemplateAdmin.TabIndex = 29;
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Location = new System.Drawing.Point(146, 78);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(67, 15);
+			this.label17.TabIndex = 28;
+			this.label17.Text = "礼物模板";
+			// 
+			// checkBoxReadGiftAdmin
+			// 
+			this.checkBoxReadGiftAdmin.AutoSize = true;
+			this.checkBoxReadGiftAdmin.Location = new System.Drawing.Point(19, 76);
+			this.checkBoxReadGiftAdmin.Name = "checkBoxReadGiftAdmin";
+			this.checkBoxReadGiftAdmin.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadGiftAdmin.TabIndex = 27;
+			this.checkBoxReadGiftAdmin.Text = "读出赠送礼物";
+			this.checkBoxReadGiftAdmin.UseVisualStyleBackColor = true;
+			// 
+			// textBoxTextTemplateAdmin
+			// 
+			this.textBoxTextTemplateAdmin.Location = new System.Drawing.Point(238, 21);
+			this.textBoxTextTemplateAdmin.Name = "textBoxTextTemplateAdmin";
+			this.textBoxTextTemplateAdmin.Size = new System.Drawing.Size(507, 25);
+			this.textBoxTextTemplateAdmin.TabIndex = 26;
+			// 
+			// label18
+			// 
+			this.label18.AutoSize = true;
+			this.label18.Location = new System.Drawing.Point(146, 26);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(67, 15);
+			this.label18.TabIndex = 25;
+			this.label18.Text = "弹幕模板";
+			// 
+			// checkBoxReadTextAdmin
+			// 
+			this.checkBoxReadTextAdmin.AutoSize = true;
+			this.checkBoxReadTextAdmin.Location = new System.Drawing.Point(19, 24);
+			this.checkBoxReadTextAdmin.Name = "checkBoxReadTextAdmin";
+			this.checkBoxReadTextAdmin.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadTextAdmin.TabIndex = 24;
+			this.checkBoxReadTextAdmin.Text = "读出弹幕文本";
+			this.checkBoxReadTextAdmin.UseVisualStyleBackColor = true;
+			// 
 			// tabPage7
 			// 
 			this.tabPage7.Controls.Add(this.textBoxLiveBeginTemplate);
@@ -1268,6 +1276,66 @@
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
+			// tabPage8
+			// 
+			this.tabPage8.Controls.Add(this.buttonDeleteVoiceFiles);
+			this.tabPage8.Controls.Add(this.labelVoicesStatistic);
+			this.tabPage8.Controls.Add(this.buttonOpenVoicesPath);
+			this.tabPage8.Controls.Add(this.textBoxVoicesPath);
+			this.tabPage8.Controls.Add(this.label36);
+			this.tabPage8.Location = new System.Drawing.Point(4, 25);
+			this.tabPage8.Name = "tabPage8";
+			this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage8.Size = new System.Drawing.Size(788, 372);
+			this.tabPage8.TabIndex = 3;
+			this.tabPage8.Text = "缓存";
+			this.tabPage8.UseVisualStyleBackColor = true;
+			this.tabPage8.Paint += new System.Windows.Forms.PaintEventHandler(this.TabPage8_Paint);
+			// 
+			// label36
+			// 
+			this.label36.AutoSize = true;
+			this.label36.Location = new System.Drawing.Point(23, 22);
+			this.label36.Name = "label36";
+			this.label36.Size = new System.Drawing.Size(67, 15);
+			this.label36.TabIndex = 0;
+			this.label36.Text = "缓存目录";
+			// 
+			// textBoxVoicesPath
+			// 
+			this.textBoxVoicesPath.Location = new System.Drawing.Point(97, 18);
+			this.textBoxVoicesPath.Name = "textBoxVoicesPath";
+			this.textBoxVoicesPath.ReadOnly = true;
+			this.textBoxVoicesPath.Size = new System.Drawing.Size(506, 25);
+			this.textBoxVoicesPath.TabIndex = 1;
+			// 
+			// buttonOpenVoicesPath
+			// 
+			this.buttonOpenVoicesPath.Location = new System.Drawing.Point(620, 17);
+			this.buttonOpenVoicesPath.Name = "buttonOpenVoicesPath";
+			this.buttonOpenVoicesPath.Size = new System.Drawing.Size(69, 25);
+			this.buttonOpenVoicesPath.TabIndex = 2;
+			this.buttonOpenVoicesPath.Text = "打开";
+			this.buttonOpenVoicesPath.UseVisualStyleBackColor = true;
+			// 
+			// labelVoicesStatistic
+			// 
+			this.labelVoicesStatistic.AutoSize = true;
+			this.labelVoicesStatistic.Location = new System.Drawing.Point(94, 74);
+			this.labelVoicesStatistic.Name = "labelVoicesStatistic";
+			this.labelVoicesStatistic.Size = new System.Drawing.Size(209, 15);
+			this.labelVoicesStatistic.TabIndex = 3;
+			this.labelVoicesStatistic.Text = "文件 9999 个，共计 9999 MB";
+			// 
+			// buttonDeleteVoiceFiles
+			// 
+			this.buttonDeleteVoiceFiles.Location = new System.Drawing.Point(319, 69);
+			this.buttonDeleteVoiceFiles.Name = "buttonDeleteVoiceFiles";
+			this.buttonDeleteVoiceFiles.Size = new System.Drawing.Size(69, 25);
+			this.buttonDeleteVoiceFiles.TabIndex = 4;
+			this.buttonDeleteVoiceFiles.Text = "清除";
+			this.buttonDeleteVoiceFiles.UseVisualStyleBackColor = true;
+			// 
 			// AdminForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1284,16 +1352,16 @@
 			this.tabControl2.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
-			this.tabPage2.ResumeLayout(false);
-			this.tabPage2.PerformLayout();
-			this.tabPage3.ResumeLayout(false);
-			this.tabPage3.PerformLayout();
 			this.tabPage4.ResumeLayout(false);
 			this.tabPage4.PerformLayout();
 			this.tabPage5.ResumeLayout(false);
 			this.tabPage5.PerformLayout();
 			this.tabPage6.ResumeLayout(false);
 			this.tabPage6.PerformLayout();
+			this.tabPage2.ResumeLayout(false);
+			this.tabPage2.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
 			this.tabPage7.ResumeLayout(false);
 			this.tabPage7.PerformLayout();
 			this.tabAudio.ResumeLayout(false);
@@ -1302,6 +1370,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
 			this.tabAdvanced.ResumeLayout(false);
 			this.tabAdvanced.PerformLayout();
+			this.tabPage8.ResumeLayout(false);
+			this.tabPage8.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -1421,5 +1491,11 @@
 		private System.Windows.Forms.TextBox textBoxConnectTemplate;
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.CheckBox checkBoxReadConnect;
+		private System.Windows.Forms.TabPage tabPage8;
+		private System.Windows.Forms.Button buttonDeleteVoiceFiles;
+		private System.Windows.Forms.Label labelVoicesStatistic;
+		private System.Windows.Forms.Button buttonOpenVoicesPath;
+		private System.Windows.Forms.TextBox textBoxVoicesPath;
+		private System.Windows.Forms.Label label36;
 	}
 }
