@@ -1311,12 +1311,13 @@
 			// 
 			// buttonOpenVoicesPath
 			// 
-			this.buttonOpenVoicesPath.Location = new System.Drawing.Point(620, 17);
+			this.buttonOpenVoicesPath.Location = new System.Drawing.Point(620, 16);
 			this.buttonOpenVoicesPath.Name = "buttonOpenVoicesPath";
-			this.buttonOpenVoicesPath.Size = new System.Drawing.Size(69, 25);
+			this.buttonOpenVoicesPath.Size = new System.Drawing.Size(69, 33);
 			this.buttonOpenVoicesPath.TabIndex = 2;
 			this.buttonOpenVoicesPath.Text = "打开";
 			this.buttonOpenVoicesPath.UseVisualStyleBackColor = true;
+			this.buttonOpenVoicesPath.Click += new System.EventHandler(this.ButtonOpenVoicesPath_Click);
 			// 
 			// labelVoicesStatistic
 			// 
@@ -1329,12 +1330,13 @@
 			// 
 			// buttonDeleteVoiceFiles
 			// 
-			this.buttonDeleteVoiceFiles.Location = new System.Drawing.Point(319, 69);
+			this.buttonDeleteVoiceFiles.Location = new System.Drawing.Point(319, 66);
 			this.buttonDeleteVoiceFiles.Name = "buttonDeleteVoiceFiles";
-			this.buttonDeleteVoiceFiles.Size = new System.Drawing.Size(69, 25);
+			this.buttonDeleteVoiceFiles.Size = new System.Drawing.Size(69, 33);
 			this.buttonDeleteVoiceFiles.TabIndex = 4;
 			this.buttonDeleteVoiceFiles.Text = "清除";
 			this.buttonDeleteVoiceFiles.UseVisualStyleBackColor = true;
+			this.buttonDeleteVoiceFiles.Click += new System.EventHandler(this.ButtonDeleteVoiceFiles_Click);
 			// 
 			// AdminForm
 			// 

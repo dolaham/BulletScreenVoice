@@ -371,7 +371,9 @@ namespace BulletScreenVoice
 			string voicesDir = BSVPlugin.instance.voicesDir;
 			textBoxVoicesPath.Text = voicesDir;
 
-			int fileCount = 0;
+			buttonOpenVoicesPath.Enabled = Directory.Exists(voicesDir);
+
+				int fileCount = 0;
 			ulong fileSize = 0;
 			if(Directory.Exists(voicesDir))
 			{
@@ -384,6 +386,8 @@ namespace BulletScreenVoice
 					fileSize += (ulong)fileInf.Length;
 				}
 			}
+
+			buttonDeleteVoiceFiles.Enabled = fileCount > 0;
 
 			const ulong KB = 1024;
 			const ulong MB = KB * 1024;
@@ -412,6 +416,22 @@ namespace BulletScreenVoice
 			}
 
 			labelVoicesStatistic.Text = string.Format("文件 {0} 个，共计 {1} {2}", fileCount, fileSize, unitName);
+		}
+
+		private void ButtonOpenVoicesPath_Click(object sender, EventArgs e)
+		{
+			string voicesPath = BSVPlugin.instance.voicesDir;
+			if(Directory.Exists(voicesPath))
+			{
+				System.Diagnostics.Process.Start("explorer.exe", voicesPath);
+			}
+		}
+
+		private void ButtonDeleteVoiceFiles_Click(object sender, EventArgs e)
+		{
+			BSVPlugin.instance.deleteVoices();
+
+			Invalidate(true);
 		}
 	}
 }
