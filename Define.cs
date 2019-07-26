@@ -2,12 +2,19 @@
 public enum UserLevel
 {
 	Common = 0,  // 一般
-	Milord,  // 老爷
-	Admin,  // 房管
+	Viceroy,  // 总督
+	Governor,  // 提督
+	Captain  // 舰长
+}
+
+public enum UserConfigIndex
+{
+	Common = 0,  // 一般
 	Viceroy,  // 总督
 	Governor,  // 提督
 	Captain,  // 舰长
-
+	Milord,  // 老爷
+	Admin,  // 房管
 	Count
 }
 

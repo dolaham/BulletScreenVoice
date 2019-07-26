@@ -42,6 +42,8 @@ namespace BulletScreenVoice
 		bool needInitAudio = true;
 		bool needInitTTS = true;
 
+		string roomId;
+
 		List<TTSTask> taskQueue = new List<TTSTask>();
 
 		public BSVPlugin()
@@ -78,76 +80,33 @@ namespace BulletScreenVoice
 			{
 				config.audioDeviceId = AudioService.allDevices[0];
 			}
+
+			UserService.init();
 		}
 
-
-		private void BSVPlugin_ReceivedRoomCount(object sender, BilibiliDM_PluginFramework.ReceivedRoomCountArgs e)
-		{
-		}
-
-		private void BSVPlugin_ReceivedDanmaku(object sender, BilibiliDM_PluginFramework.ReceivedDanmakuArgs e)
-		{
-			switch(e.Danmaku.MsgType)
-			{
-				case MsgTypeEnum.Comment:
-					{
-						string str = string.Format("{0}说：{1}", e.Danmaku.UserName, e.Danmaku.CommentText);
-						addTTSTask(str);
-						break;
-					}
-
-				case MsgTypeEnum.GiftSend:
-					{
-						string str = string.Format("感谢{0}赠送{1}{2}个", e.Danmaku.UserName, e.Danmaku.GiftName, e.Danmaku.GiftCount);
-						addTTSTask(str);
-						break;
-					}
-
-				case MsgTypeEnum.Welcome:
-					{
-						string str = string.Format("欢迎老爷{0}进入直播间，喜欢您就关注一下呗", e.Danmaku.UserName);
-						addTTSTask(str);
-						break;
-					}
-
-				case MsgTypeEnum.LiveStart:
-					addTTSTask("直播开始");
-					break;
-
-				case MsgTypeEnum.LiveEnd:
-					addTTSTask("直播结束");
-					break;
-
-				case MsgTypeEnum.WelcomeGuard:
-					{
-						string str = string.Format("欢迎{0}进入直播间，喜欢您就关注一下呗", e.Danmaku.UserName);
-						addTTSTask(str);
-					}
-					break;
-
-				case MsgTypeEnum.GuardBuy:
-					break;
-			}
-		}
-
+		// 连接至直播间
 		private void BSVPlugin_Connected(object sender, BilibiliDM_PluginFramework.ConnectedEvtArgs e)
 		{
-			if(config.readConnect)
+			roomId = e.roomid.ToString();
+
+			if (config.readConnect)
 			{
-				string str = config.templateConnect.Replace("{roomId}", e.roomid.ToString());
+				string str = config.templateConnect.Replace("{roomId}", roomId);
 				addTTSTask(str);
 			}
 		}
 
+		// 与直播间断开连接
 		private void BSVPlugin_Disconnected(object sender, BilibiliDM_PluginFramework.DisconnectEvtArgs e)
 		{
-			if(config.readDisconnect)
+			if (config.readDisconnect)
 			{
 				string str = config.templateDisconnect.Replace("{err}", e.Error.Message);
 				addTTSTask(str);
 			}
 		}
 
+		// 插件启用
 		public override void Start()
 		{
 			base.Start();
@@ -157,6 +116,7 @@ namespace BulletScreenVoice
 			needInitTTS = true;
 		}
 
+		// 插件停用
 		public override void Stop()
 		{
 			base.Stop();
@@ -168,6 +128,7 @@ namespace BulletScreenVoice
 			TTSService.uninit();
 		}
 
+		// 打开插件设置界面
 		public override void Admin()
 		{
 			base.Admin();
@@ -177,7 +138,7 @@ namespace BulletScreenVoice
 			DialogResult result = form.ShowDialog();
 			Log("Admin: " + result);
 
-			if(result == DialogResult.OK)
+			if (result == DialogResult.OK)
 			{
 				if (!Directory.Exists(dataDir))
 				{
@@ -189,16 +150,184 @@ namespace BulletScreenVoice
 				form.grabConfig(config);
 				Config.save(config, configFilePath);
 
-				if(oldAudioDeviceGuid != config.audioDeviceId)
+				if (oldAudioDeviceGuid != config.audioDeviceId)
 				{
 					needInitAudio = true;
 				}
 
-				if(config.useCustomSecret)
+				if (config.useCustomSecret)
 				{
 					needInitTTS = true;
 				}
 			}
+		}
+
+		// 收到直播间人气数据
+		private void BSVPlugin_ReceivedRoomCount(object sender, BilibiliDM_PluginFramework.ReceivedRoomCountArgs e)
+		{
+		}
+
+		// 收到弹幕、礼物等消息
+		private void BSVPlugin_ReceivedDanmaku(object sender, BilibiliDM_PluginFramework.ReceivedDanmakuArgs e)
+		{
+			DanmakuModel dm = e.Danmaku;
+			int userId = dm.UserID;
+
+			switch(dm.MsgType)
+			{
+				case MsgTypeEnum.LiveStart:  // 直播开始
+					if (config.readLiveBegin)
+					{
+						string str = makeStringFromTemplate(dm, config.templateLiveBegin);
+						addTTSTask(str);
+					}
+					break;
+
+				case MsgTypeEnum.LiveEnd:  // 直播结束
+					if (config.readLiveEnd)
+					{
+						string str = makeStringFromTemplate(dm, config.templateLiveEnd);
+						addTTSTask(str);
+					}
+					break;
+
+				case MsgTypeEnum.Welcome:  // 有观众进入直播间
+					{
+						UserService.UserInfo userInfo = UserService.getOrCreateUserInfo(userId);
+						userInfo.isMilord = dm.isVIP;
+
+						int userCfgIndex = (int)getUserConfigIndex(userInfo);
+						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
+						if (userCfg.readWelcome)
+						{
+							string str = makeStringFromTemplate(dm, userCfg.templateWelcome);
+							addTTSTask(str);
+						}
+					}
+					break;
+
+				case MsgTypeEnum.WelcomeGuard:  // 有普通观众或船员进入直播间
+					{
+						UserService.UserInfo userInfo = UserService.getOrCreateUserInfo(userId);
+						userInfo.level = (UserLevel)dm.UserGuardLevel;
+
+						int userCfgIndex = (int)getUserConfigIndex(userInfo);
+						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
+						if (userCfg.readWelcome)
+						{
+							string str = makeStringFromTemplate(dm, userCfg.templateWelcome);
+							addTTSTask(str);
+						}
+					}
+					break;
+
+				case MsgTypeEnum.Comment:  // 弹幕文本
+					{
+						int userCfgIndex = dm.UserGuardLevel;
+						if(userCfgIndex == (int)UserLevel.Common)
+						{
+							UserService.UserInfo userInfo = UserService.getUserInfo(userId);
+							userCfgIndex = (int)getUserConfigIndex(userInfo);
+						}
+
+						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
+						if(userCfg.readText)
+						{
+							string str = makeStringFromTemplate(dm, userCfg.templateText);
+							addTTSTask(str);
+						}
+					}
+					break;
+
+				case MsgTypeEnum.GiftSend:  // 收到礼物
+					{
+						UserService.UserInfo userInfo = UserService.getUserInfo(userId);
+						int userCfgIndex = (int)getUserConfigIndex(userInfo);
+						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
+						if(userCfg.readGift)
+						{
+							string str = makeStringFromTemplate(dm, userCfg.templateGift);
+							addTTSTask(str);
+						}
+					}
+					break;
+
+				case MsgTypeEnum.GuardBuy:  // 购买船票
+					{
+						int userCfgIndex = dm.UserGuardLevel;
+						if (userCfgIndex == (int)UserLevel.Common)
+						{
+							UserService.UserInfo userInfo = UserService.getUserInfo(userId);
+							userCfgIndex = (int)getUserConfigIndex(userInfo);
+						}
+
+						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
+						if(userCfg.readTicket)
+						{
+							string str = makeStringFromTemplate(dm, userCfg.templateTicket);
+							addTTSTask(str);
+						}
+					}
+					break;
+			}
+		}
+
+		static UserConfigIndex getUserConfigIndex(int id)
+		{
+			UserService.UserInfo userInfo = UserService.getUserInfo(id);
+			return getUserConfigIndex(userInfo);
+		}
+
+		static UserConfigIndex getUserConfigIndex(UserService.UserInfo userInfo)
+		{
+			if(userInfo == null)
+			{
+				return UserConfigIndex.Common;
+			}
+
+			if(userInfo.level != UserLevel.Common)
+			{
+				return (UserConfigIndex)userInfo.level;
+			}
+
+			if(userInfo.isAdmin)
+			{
+				return UserConfigIndex.Admin;
+			}
+			else if(userInfo.isMilord)
+			{
+				return UserConfigIndex.Milord;
+			}
+
+			return UserConfigIndex.Common;
+		}
+
+		// 从模板构造字符串
+		string makeStringFromTemplate(DanmakuModel dm, string template)
+		{
+			string userName = dm.UserName;
+			if(string.IsNullOrEmpty(userName))
+			{
+				UserService.UserInfo userInfo = UserService.getUserInfo(dm.UserID);
+				if(userInfo != null)
+				{
+					userName = userInfo.name;
+				}
+			}
+
+			string roomId = dm.roomID;
+			if(string.IsNullOrEmpty(roomId))
+			{
+				roomId = this.roomId;
+			}
+
+			string str = template.Replace("{user}", userName);
+			str = str.Replace("{text}", dm.CommentText);
+			str = str.Replace("{gift}", dm.GiftName);
+			str = str.Replace("{count}", dm.GiftCount.ToString());
+			str = str.Replace("{roomId}", roomId);
+
+			return str;
 		}
 
 		// 添加一个文本转语音任务

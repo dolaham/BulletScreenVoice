@@ -40,8 +40,6 @@ public class Config
 
 	public class UserConfig
 	{
-		public UserLevel userLevel = UserLevel.Common;
-
 		public bool readWelcome = true;  // 是否读出欢迎信息
 		public string templateWelcome = "欢迎{user}光临";  // 欢迎模板
 
@@ -55,7 +53,7 @@ public class Config
 		public string templateTicket = "感谢{user}购买船票";
 	}
 
-	public UserConfig[] userConfigs = new UserConfig[(int)UserLevel.Count];
+	public UserConfig[] userConfigs = new UserConfig[(int)UserConfigIndex.Count];
 
 	public bool readConnect = true;
 	public string templateConnect = "已连接至房间{roomId}";
@@ -81,7 +79,7 @@ public class Config
 
 	public Config()
 	{
-		for(int i = 0; i < (int)UserLevel.Count; ++i)
+		for(int i = 0; i < (int)UserConfigIndex.Count; ++i)
 		{
 			userConfigs[i] = new UserConfig();
 		}

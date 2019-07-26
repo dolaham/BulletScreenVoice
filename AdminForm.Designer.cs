@@ -112,6 +112,19 @@
 			this.textBoxTextTemplateCaptain = new System.Windows.Forms.TextBox();
 			this.label30 = new System.Windows.Forms.Label();
 			this.checkBoxReadTextCaptain = new System.Windows.Forms.CheckBox();
+			this.tabPage7 = new System.Windows.Forms.TabPage();
+			this.textBoxLiveBeginTemplate = new System.Windows.Forms.TextBox();
+			this.label32 = new System.Windows.Forms.Label();
+			this.checkBoxReadLiveBegin = new System.Windows.Forms.CheckBox();
+			this.textBoxLiveEndTemplate = new System.Windows.Forms.TextBox();
+			this.label33 = new System.Windows.Forms.Label();
+			this.checkBoxReadLiveEnd = new System.Windows.Forms.CheckBox();
+			this.textBoxDisconnectTemplate = new System.Windows.Forms.TextBox();
+			this.label34 = new System.Windows.Forms.Label();
+			this.checkBoxReadDisconnect = new System.Windows.Forms.CheckBox();
+			this.textBoxConnectTemplate = new System.Windows.Forms.TextBox();
+			this.label35 = new System.Windows.Forms.Label();
+			this.checkBoxReadConnect = new System.Windows.Forms.CheckBox();
 			this.textBoxDesc = new System.Windows.Forms.TextBox();
 			this.tabAudio = new System.Windows.Forms.TabPage();
 			this.comboBoxVoiceTypes = new System.Windows.Forms.ComboBox();
@@ -128,19 +141,6 @@
 			this.checkBoxUseCustomeSecret = new System.Windows.Forms.CheckBox();
 			this.buttonOk = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
-			this.tabPage7 = new System.Windows.Forms.TabPage();
-			this.textBoxLiveBeginTemplate = new System.Windows.Forms.TextBox();
-			this.label32 = new System.Windows.Forms.Label();
-			this.checkBoxReadLiveBegin = new System.Windows.Forms.CheckBox();
-			this.textBoxLiveEndTemplate = new System.Windows.Forms.TextBox();
-			this.label33 = new System.Windows.Forms.Label();
-			this.checkBoxReadLiveEnd = new System.Windows.Forms.CheckBox();
-			this.textBoxDisconnectTemplate = new System.Windows.Forms.TextBox();
-			this.label34 = new System.Windows.Forms.Label();
-			this.checkBoxReadDisconnect = new System.Windows.Forms.CheckBox();
-			this.textBoxConnectTemplate = new System.Windows.Forms.TextBox();
-			this.label35 = new System.Windows.Forms.Label();
-			this.checkBoxReadConnect = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
 			this.tabControl2.SuspendLayout();
@@ -150,11 +150,11 @@
 			this.tabPage4.SuspendLayout();
 			this.tabPage5.SuspendLayout();
 			this.tabPage6.SuspendLayout();
+			this.tabPage7.SuspendLayout();
 			this.tabAudio.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
 			this.tabAdvanced.SuspendLayout();
-			this.tabPage7.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -211,11 +211,11 @@
 			// tabControl2
 			// 
 			this.tabControl2.Controls.Add(this.tabPage1);
-			this.tabControl2.Controls.Add(this.tabPage2);
-			this.tabControl2.Controls.Add(this.tabPage3);
 			this.tabControl2.Controls.Add(this.tabPage4);
 			this.tabControl2.Controls.Add(this.tabPage5);
 			this.tabControl2.Controls.Add(this.tabPage6);
+			this.tabControl2.Controls.Add(this.tabPage2);
+			this.tabControl2.Controls.Add(this.tabPage3);
 			this.tabControl2.Controls.Add(this.tabPage7);
 			this.tabControl2.Location = new System.Drawing.Point(6, 41);
 			this.tabControl2.Name = "tabControl2";
@@ -979,6 +979,132 @@
 			this.checkBoxReadTextCaptain.Text = "读出弹幕文本";
 			this.checkBoxReadTextCaptain.UseVisualStyleBackColor = true;
 			// 
+			// tabPage7
+			// 
+			this.tabPage7.Controls.Add(this.textBoxLiveBeginTemplate);
+			this.tabPage7.Controls.Add(this.label32);
+			this.tabPage7.Controls.Add(this.checkBoxReadLiveBegin);
+			this.tabPage7.Controls.Add(this.textBoxLiveEndTemplate);
+			this.tabPage7.Controls.Add(this.label33);
+			this.tabPage7.Controls.Add(this.checkBoxReadLiveEnd);
+			this.tabPage7.Controls.Add(this.textBoxDisconnectTemplate);
+			this.tabPage7.Controls.Add(this.label34);
+			this.tabPage7.Controls.Add(this.checkBoxReadDisconnect);
+			this.tabPage7.Controls.Add(this.textBoxConnectTemplate);
+			this.tabPage7.Controls.Add(this.label35);
+			this.tabPage7.Controls.Add(this.checkBoxReadConnect);
+			this.tabPage7.Location = new System.Drawing.Point(4, 25);
+			this.tabPage7.Name = "tabPage7";
+			this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage7.Size = new System.Drawing.Size(765, 222);
+			this.tabPage7.TabIndex = 6;
+			this.tabPage7.Text = "其它";
+			this.tabPage7.UseVisualStyleBackColor = true;
+			// 
+			// textBoxLiveBeginTemplate
+			// 
+			this.textBoxLiveBeginTemplate.Location = new System.Drawing.Point(238, 125);
+			this.textBoxLiveBeginTemplate.Name = "textBoxLiveBeginTemplate";
+			this.textBoxLiveBeginTemplate.Size = new System.Drawing.Size(507, 25);
+			this.textBoxLiveBeginTemplate.TabIndex = 47;
+			// 
+			// label32
+			// 
+			this.label32.AutoSize = true;
+			this.label32.Location = new System.Drawing.Point(146, 130);
+			this.label32.Name = "label32";
+			this.label32.Size = new System.Drawing.Size(67, 15);
+			this.label32.TabIndex = 46;
+			this.label32.Text = "语音模板";
+			// 
+			// checkBoxReadLiveBegin
+			// 
+			this.checkBoxReadLiveBegin.AutoSize = true;
+			this.checkBoxReadLiveBegin.Location = new System.Drawing.Point(19, 128);
+			this.checkBoxReadLiveBegin.Name = "checkBoxReadLiveBegin";
+			this.checkBoxReadLiveBegin.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadLiveBegin.TabIndex = 45;
+			this.checkBoxReadLiveBegin.Text = "读出直播开始";
+			this.checkBoxReadLiveBegin.UseVisualStyleBackColor = true;
+			// 
+			// textBoxLiveEndTemplate
+			// 
+			this.textBoxLiveEndTemplate.Location = new System.Drawing.Point(238, 177);
+			this.textBoxLiveEndTemplate.Name = "textBoxLiveEndTemplate";
+			this.textBoxLiveEndTemplate.Size = new System.Drawing.Size(507, 25);
+			this.textBoxLiveEndTemplate.TabIndex = 44;
+			// 
+			// label33
+			// 
+			this.label33.AutoSize = true;
+			this.label33.Location = new System.Drawing.Point(146, 182);
+			this.label33.Name = "label33";
+			this.label33.Size = new System.Drawing.Size(67, 15);
+			this.label33.TabIndex = 43;
+			this.label33.Text = "语音模板";
+			// 
+			// checkBoxReadLiveEnd
+			// 
+			this.checkBoxReadLiveEnd.AutoSize = true;
+			this.checkBoxReadLiveEnd.Location = new System.Drawing.Point(19, 180);
+			this.checkBoxReadLiveEnd.Name = "checkBoxReadLiveEnd";
+			this.checkBoxReadLiveEnd.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadLiveEnd.TabIndex = 42;
+			this.checkBoxReadLiveEnd.Text = "读出直播结束";
+			this.checkBoxReadLiveEnd.UseVisualStyleBackColor = true;
+			// 
+			// textBoxDisconnectTemplate
+			// 
+			this.textBoxDisconnectTemplate.Location = new System.Drawing.Point(238, 73);
+			this.textBoxDisconnectTemplate.Name = "textBoxDisconnectTemplate";
+			this.textBoxDisconnectTemplate.Size = new System.Drawing.Size(507, 25);
+			this.textBoxDisconnectTemplate.TabIndex = 41;
+			// 
+			// label34
+			// 
+			this.label34.AutoSize = true;
+			this.label34.Location = new System.Drawing.Point(146, 78);
+			this.label34.Name = "label34";
+			this.label34.Size = new System.Drawing.Size(67, 15);
+			this.label34.TabIndex = 40;
+			this.label34.Text = "语音模板";
+			// 
+			// checkBoxReadDisconnect
+			// 
+			this.checkBoxReadDisconnect.AutoSize = true;
+			this.checkBoxReadDisconnect.Location = new System.Drawing.Point(19, 76);
+			this.checkBoxReadDisconnect.Name = "checkBoxReadDisconnect";
+			this.checkBoxReadDisconnect.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadDisconnect.TabIndex = 39;
+			this.checkBoxReadDisconnect.Text = "读出断开房间";
+			this.checkBoxReadDisconnect.UseVisualStyleBackColor = true;
+			// 
+			// textBoxConnectTemplate
+			// 
+			this.textBoxConnectTemplate.Location = new System.Drawing.Point(238, 21);
+			this.textBoxConnectTemplate.Name = "textBoxConnectTemplate";
+			this.textBoxConnectTemplate.Size = new System.Drawing.Size(507, 25);
+			this.textBoxConnectTemplate.TabIndex = 38;
+			// 
+			// label35
+			// 
+			this.label35.AutoSize = true;
+			this.label35.Location = new System.Drawing.Point(146, 26);
+			this.label35.Name = "label35";
+			this.label35.Size = new System.Drawing.Size(67, 15);
+			this.label35.TabIndex = 37;
+			this.label35.Text = "语音模板";
+			// 
+			// checkBoxReadConnect
+			// 
+			this.checkBoxReadConnect.AutoSize = true;
+			this.checkBoxReadConnect.Location = new System.Drawing.Point(19, 24);
+			this.checkBoxReadConnect.Name = "checkBoxReadConnect";
+			this.checkBoxReadConnect.Size = new System.Drawing.Size(119, 19);
+			this.checkBoxReadConnect.TabIndex = 36;
+			this.checkBoxReadConnect.Text = "读出连接房间";
+			this.checkBoxReadConnect.UseVisualStyleBackColor = true;
+			// 
 			// textBoxDesc
 			// 
 			this.textBoxDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1142,132 +1268,6 @@
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
-			// tabPage7
-			// 
-			this.tabPage7.Controls.Add(this.textBoxLiveBeginTemplate);
-			this.tabPage7.Controls.Add(this.label32);
-			this.tabPage7.Controls.Add(this.checkBoxReadLiveBegin);
-			this.tabPage7.Controls.Add(this.textBoxLiveEndTemplate);
-			this.tabPage7.Controls.Add(this.label33);
-			this.tabPage7.Controls.Add(this.checkBoxReadLiveEnd);
-			this.tabPage7.Controls.Add(this.textBoxDisconnectTemplate);
-			this.tabPage7.Controls.Add(this.label34);
-			this.tabPage7.Controls.Add(this.checkBoxReadDisconnect);
-			this.tabPage7.Controls.Add(this.textBoxConnectTemplate);
-			this.tabPage7.Controls.Add(this.label35);
-			this.tabPage7.Controls.Add(this.checkBoxReadConnect);
-			this.tabPage7.Location = new System.Drawing.Point(4, 25);
-			this.tabPage7.Name = "tabPage7";
-			this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage7.Size = new System.Drawing.Size(765, 222);
-			this.tabPage7.TabIndex = 6;
-			this.tabPage7.Text = "其它";
-			this.tabPage7.UseVisualStyleBackColor = true;
-			// 
-			// textBoxLiveBeginTemplate
-			// 
-			this.textBoxLiveBeginTemplate.Location = new System.Drawing.Point(238, 125);
-			this.textBoxLiveBeginTemplate.Name = "textBoxLiveBeginTemplate";
-			this.textBoxLiveBeginTemplate.Size = new System.Drawing.Size(507, 25);
-			this.textBoxLiveBeginTemplate.TabIndex = 47;
-			// 
-			// label32
-			// 
-			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(146, 130);
-			this.label32.Name = "label32";
-			this.label32.Size = new System.Drawing.Size(67, 15);
-			this.label32.TabIndex = 46;
-			this.label32.Text = "语音模板";
-			// 
-			// checkBoxReadLiveBegin
-			// 
-			this.checkBoxReadLiveBegin.AutoSize = true;
-			this.checkBoxReadLiveBegin.Location = new System.Drawing.Point(19, 128);
-			this.checkBoxReadLiveBegin.Name = "checkBoxReadLiveBegin";
-			this.checkBoxReadLiveBegin.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadLiveBegin.TabIndex = 45;
-			this.checkBoxReadLiveBegin.Text = "读出直播开始";
-			this.checkBoxReadLiveBegin.UseVisualStyleBackColor = true;
-			// 
-			// textBoxLiveEndTemplate
-			// 
-			this.textBoxLiveEndTemplate.Location = new System.Drawing.Point(238, 177);
-			this.textBoxLiveEndTemplate.Name = "textBoxLiveEndTemplate";
-			this.textBoxLiveEndTemplate.Size = new System.Drawing.Size(507, 25);
-			this.textBoxLiveEndTemplate.TabIndex = 44;
-			// 
-			// label33
-			// 
-			this.label33.AutoSize = true;
-			this.label33.Location = new System.Drawing.Point(146, 182);
-			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(67, 15);
-			this.label33.TabIndex = 43;
-			this.label33.Text = "语音模板";
-			// 
-			// checkBoxReadLiveEnd
-			// 
-			this.checkBoxReadLiveEnd.AutoSize = true;
-			this.checkBoxReadLiveEnd.Location = new System.Drawing.Point(19, 180);
-			this.checkBoxReadLiveEnd.Name = "checkBoxReadLiveEnd";
-			this.checkBoxReadLiveEnd.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadLiveEnd.TabIndex = 42;
-			this.checkBoxReadLiveEnd.Text = "读出直播结束";
-			this.checkBoxReadLiveEnd.UseVisualStyleBackColor = true;
-			// 
-			// textBoxDisconnectTemplate
-			// 
-			this.textBoxDisconnectTemplate.Location = new System.Drawing.Point(238, 73);
-			this.textBoxDisconnectTemplate.Name = "textBoxDisconnectTemplate";
-			this.textBoxDisconnectTemplate.Size = new System.Drawing.Size(507, 25);
-			this.textBoxDisconnectTemplate.TabIndex = 41;
-			// 
-			// label34
-			// 
-			this.label34.AutoSize = true;
-			this.label34.Location = new System.Drawing.Point(146, 78);
-			this.label34.Name = "label34";
-			this.label34.Size = new System.Drawing.Size(67, 15);
-			this.label34.TabIndex = 40;
-			this.label34.Text = "语音模板";
-			// 
-			// checkBoxReadDisconnect
-			// 
-			this.checkBoxReadDisconnect.AutoSize = true;
-			this.checkBoxReadDisconnect.Location = new System.Drawing.Point(19, 76);
-			this.checkBoxReadDisconnect.Name = "checkBoxReadDisconnect";
-			this.checkBoxReadDisconnect.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadDisconnect.TabIndex = 39;
-			this.checkBoxReadDisconnect.Text = "读出断开房间";
-			this.checkBoxReadDisconnect.UseVisualStyleBackColor = true;
-			// 
-			// textBoxConnectTemplate
-			// 
-			this.textBoxConnectTemplate.Location = new System.Drawing.Point(238, 21);
-			this.textBoxConnectTemplate.Name = "textBoxConnectTemplate";
-			this.textBoxConnectTemplate.Size = new System.Drawing.Size(507, 25);
-			this.textBoxConnectTemplate.TabIndex = 38;
-			// 
-			// label35
-			// 
-			this.label35.AutoSize = true;
-			this.label35.Location = new System.Drawing.Point(146, 26);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(67, 15);
-			this.label35.TabIndex = 37;
-			this.label35.Text = "语音模板";
-			// 
-			// checkBoxReadConnect
-			// 
-			this.checkBoxReadConnect.AutoSize = true;
-			this.checkBoxReadConnect.Location = new System.Drawing.Point(19, 24);
-			this.checkBoxReadConnect.Name = "checkBoxReadConnect";
-			this.checkBoxReadConnect.Size = new System.Drawing.Size(119, 19);
-			this.checkBoxReadConnect.TabIndex = 36;
-			this.checkBoxReadConnect.Text = "读出连接房间";
-			this.checkBoxReadConnect.UseVisualStyleBackColor = true;
-			// 
 			// AdminForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1294,14 +1294,14 @@
 			this.tabPage5.PerformLayout();
 			this.tabPage6.ResumeLayout(false);
 			this.tabPage6.PerformLayout();
+			this.tabPage7.ResumeLayout(false);
+			this.tabPage7.PerformLayout();
 			this.tabAudio.ResumeLayout(false);
 			this.tabAudio.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
 			this.tabAdvanced.ResumeLayout(false);
 			this.tabAdvanced.PerformLayout();
-			this.tabPage7.ResumeLayout(false);
-			this.tabPage7.PerformLayout();
 			this.ResumeLayout(false);
 
 		}

@@ -88,6 +88,7 @@
     <Compile Include="Define.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TTSService.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">

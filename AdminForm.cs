@@ -25,7 +25,9 @@ namespace BulletScreenVoice
 			internal ReadControlPair pairTicket;
 		}
 
-		UserLevelConfigPage[] userLevelConfigPages = new UserLevelConfigPage[(int)UserLevel.Count];
+		
+
+		UserLevelConfigPage[] userLevelConfigPages = new UserLevelConfigPage[(int)UserConfigIndex.Count];
 
 		public AdminForm()
 		{
@@ -37,7 +39,7 @@ namespace BulletScreenVoice
 
 		void grabUserLevelConfigControls()
 		{
-			userLevelConfigPages[(int)UserLevel.Common] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Common] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -61,7 +63,7 @@ namespace BulletScreenVoice
 				}
 			};
 
-			userLevelConfigPages[(int)UserLevel.Milord] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Milord] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -88,7 +90,7 @@ namespace BulletScreenVoice
 				}
 			};
 
-			userLevelConfigPages[(int)UserLevel.Admin] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Admin] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -115,7 +117,7 @@ namespace BulletScreenVoice
 				}
 			};
 
-			userLevelConfigPages[(int)UserLevel.Viceroy] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Viceroy] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -142,7 +144,7 @@ namespace BulletScreenVoice
 				}
 			};
 
-			userLevelConfigPages[(int)UserLevel.Governor] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Governor] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -169,7 +171,7 @@ namespace BulletScreenVoice
 				}
 			};
 
-			userLevelConfigPages[(int)UserLevel.Captain] = new UserLevelConfigPage()
+			userLevelConfigPages[(int)UserConfigIndex.Captain] = new UserLevelConfigPage()
 			{
 				pairWelcome = new ReadControlPair()
 				{
@@ -199,7 +201,7 @@ namespace BulletScreenVoice
 
 		void addUserLevelConfigCheckBoxHandles()
 		{
-			for(int i = 0; i < (int)UserLevel.Count; ++i)
+			for(int i = 0; i < (int)UserConfigIndex.Count; ++i)
 			{
 				UserLevelConfigPage page = userLevelConfigPages[i];
 				page.pairWelcome.checkBoxRead.CheckedChanged += new EventHandler((sender, e)=> { page.pairWelcome.textBoxTemplate.Enabled = page.pairWelcome.checkBoxRead.Checked; });
@@ -213,7 +215,7 @@ namespace BulletScreenVoice
 		public void displayConfig(Config cfg)
 		{
 			// 响应用户配置
-			for(int i = 0; i < (int)UserLevel.Count; ++i)
+			for(int i = 0; i < (int)UserConfigIndex.Count; ++i)
 			{
 				UserLevelConfigPage page = userLevelConfigPages[i];
 				Config.UserConfig userCfg = cfg.userConfigs[i];
@@ -294,7 +296,7 @@ namespace BulletScreenVoice
 		public void grabConfig(Config cfg)
 		{
 			// 响应用户配置
-			for (int i = 0; i < (int)UserLevel.Count; ++i)
+			for (int i = 0; i < (int)UserConfigIndex.Count; ++i)
 			{
 				UserLevelConfigPage page = userLevelConfigPages[i];
 				Config.UserConfig userCfg = cfg.userConfigs[i];
