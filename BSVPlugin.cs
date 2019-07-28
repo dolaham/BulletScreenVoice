@@ -33,7 +33,9 @@ namespace BulletScreenVoice
 		public static BSVPlugin instance;
 
 		string baseDir;
-		string dataDir;
+		string pluginDir;
+		string dllDir;
+
 		public string voicesDir;
 		string configFilePath;
 
@@ -64,11 +66,15 @@ namespace BulletScreenVoice
 			string codeBase = Assembly.GetExecutingAssembly().CodeBase;
 			UriBuilder uri = new UriBuilder(codeBase);
 			string path = Uri.UnescapeDataString(uri.Path);
-			baseDir = Path.GetDirectoryName(path);
+			baseDir = Path.GetDirectoryName(path) + "\\";
 
-			dataDir = baseDir + "\\bsv\\";
-			voicesDir = dataDir + "voices\\";
-			configFilePath = dataDir + "config.json";
+			pluginDir = baseDir + "bsv\\";
+			dllDir = pluginDir + "dll\\";
+
+			loadDlls();
+
+			voicesDir = pluginDir + "voices\\";
+			configFilePath = pluginDir + "config.json";
 
 			config = Config.load(configFilePath);
 			if (config == null)
@@ -82,6 +88,42 @@ namespace BulletScreenVoice
 			}
 
 			UserService.init();
+		}
+
+		bool loadDlls()
+		{
+			string[] dllFilenames = {
+				"Crc32.NET.dll"
+				, "NAudio.dll"
+				, "Pathoschild.Http.Client.dll"
+				, "System.Net.Http.Formatting.dll"
+				, "System.Text.Encodings.Web.dll"
+				, "System.Web.Http.dll"
+				, "System.Web.Http.WebHost.dll"
+				, "TencentCloud.dll"
+			};
+
+			string curLoadingDllFilename = "";
+			string curLoadingDllFullFilePath = "";
+
+			try
+			{
+				for(int i = 0; i < dllFilenames.Length; ++i)
+				{
+					curLoadingDllFilename = dllFilenames[i];
+					curLoadingDllFullFilePath = dllDir + curLoadingDllFilename;
+					Assembly.LoadFrom(curLoadingDllFullFilePath);
+				}
+			}
+			catch (Exception e)
+			{
+				Log(e.Message);
+				Log(string.Format("加载 {0} 时发生错误，请确定以下路径的文件存在：{1}", curLoadingDllFilename, curLoadingDllFullFilePath));
+
+				return false;
+			}
+
+			return true;
 		}
 
 		// 连接至直播间
@@ -141,9 +183,9 @@ namespace BulletScreenVoice
 
 			if (result == DialogResult.OK)
 			{
-				if (!Directory.Exists(dataDir))
+				if (!Directory.Exists(pluginDir))
 				{
-					Directory.CreateDirectory(dataDir);
+					Directory.CreateDirectory(pluginDir);
 				}
 
 				string oldAudioDeviceGuid = config.audioDeviceId;
@@ -386,9 +428,9 @@ namespace BulletScreenVoice
 						File.Delete(task.filePath);
 					}
 
-					if(!Directory.Exists(dataDir))
+					if(!Directory.Exists(pluginDir))
 					{
-						Directory.CreateDirectory(dataDir);
+						Directory.CreateDirectory(pluginDir);
 					}
 					if(!Directory.Exists(voicesDir))
 					{

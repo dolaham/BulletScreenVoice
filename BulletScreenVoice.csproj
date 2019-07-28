@@ -102,14 +102,14 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>XCopy $(TargetPath) C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Crc32.NET.1.2.0\lib\net20\Crc32.NET.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\NAudio.1.9.0\lib\net35\NAudio.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Pathoschild.Http.FluentClient.3.2.0\lib\net45\Pathoschild.Http.Client.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\TencentCloudSDK.3.0.32\lib\net45\TencentCloud.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y</PostBuildEvent>
+XCopy "C:\Users\dolaham\source\repos\all\packages\Crc32.NET.1.2.0\lib\net20\Crc32.NET.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\NAudio.1.9.0\lib\net35\NAudio.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\Pathoschild.Http.FluentClient.3.2.0\lib\net45\Pathoschild.Http.Client.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\TencentCloudSDK.3.0.32\lib\net45\TencentCloud.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
+XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
