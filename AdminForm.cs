@@ -373,7 +373,7 @@ namespace BulletScreenVoice
 
 			buttonOpenVoicesPath.Enabled = Directory.Exists(voicesDir);
 
-				int fileCount = 0;
+			int fileCount = 0;
 			ulong fileSize = 0;
 			if(Directory.Exists(voicesDir))
 			{

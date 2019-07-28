@@ -101,7 +101,8 @@ namespace BulletScreenVoice
 		{
 			if (config.readDisconnect)
 			{
-				string str = config.templateDisconnect.Replace("{err}", e.Error.Message);
+				string errMsg = e?.Error?.Message;
+				string str = config.templateDisconnect.Replace("{err}", errMsg);
 				addTTSTask(str);
 			}
 		}
