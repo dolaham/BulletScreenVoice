@@ -133,12 +133,19 @@ public class AudioService
 			return false;
 		}
 
-		WaveStream stream = new AudioFileReader(filePath);
-		AutoDisposeWaveProvider autoDisposeWave = new AutoDisposeWaveProvider(stream);
-		device.Init(autoDisposeWave);
-		device.Play();
+		try
+		{
+			WaveStream stream = new AudioFileReader(filePath);
+			AutoDisposeWaveProvider autoDisposeWave = new AutoDisposeWaveProvider(stream);
+			device.Init(autoDisposeWave);
+			device.Play();
 
-		return true;
+			return true;
+		}
+		catch (Exception)
+		{
+			return false;
+		}
 	}
 
 	static void onPlaybackStopped(object sender, StoppedEventArgs args)
