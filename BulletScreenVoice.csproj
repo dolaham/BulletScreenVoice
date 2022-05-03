@@ -51,17 +51,17 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting">
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encodings.Web, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -101,15 +101,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>XCopy $(TargetPath) C:\Users\dolaham\Documents\弹幕姬\Plugins\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Crc32.NET.1.2.0\lib\net20\Crc32.NET.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\NAudio.1.9.0\lib\net35\NAudio.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Pathoschild.Http.FluentClient.3.2.0\lib\net45\Pathoschild.Http.Client.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\TencentCloudSDK.3.0.32\lib\net45\TencentCloud.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y
-XCopy "C:\Users\dolaham\source\repos\all\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll" C:\Users\dolaham\Documents\弹幕姬\Plugins\bsv\dll\ /r /s /y</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
