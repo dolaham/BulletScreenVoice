@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BulletScreenVoice</RootNamespace>
     <AssemblyName>BulletScreenVoice</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BilibiliDM_PluginFramework">
-      <HintPath>..\弹幕姬sdk\BilibiliDM_PluginFramework.dll</HintPath>
+      <HintPath>..\packages\DanmujiSDK\BilibiliDM_PluginFramework.dll</HintPath>
     </Reference>
     <Reference Include="Crc32.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc0b95cf99bf4e99, processorArchitecture=MSIL">
       <HintPath>..\packages\Crc32.NET.1.2.0\lib\net20\Crc32.NET.dll</HintPath>
@@ -43,7 +43,8 @@
       <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DanmujiSDK\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Pathoschild.Http.Client, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Pathoschild.Http.FluentClient.3.2.0\lib\net45\Pathoschild.Http.Client.dll</HintPath>

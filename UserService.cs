@@ -4,28 +4,28 @@ public static class UserService
 {
 	public class UserInfo
 	{
-		public int id;
+		public long id;
 		public string name;
 		public UserLevel level;
 		public bool isMilord;
 		public bool isAdmin;
 	}
 
-	static Dictionary<int, UserInfo> userDict;
+	static Dictionary<long, UserInfo> userDict;
 
 	public static void init()
 	{
-		userDict = new Dictionary<int, UserInfo>();
+		userDict = new Dictionary<long, UserInfo>();
 	}
 
-	public static UserInfo getUserInfo(int id)
+	public static UserInfo getUserInfo(long id)
 	{
 		UserInfo userInfo = null;
 		userDict.TryGetValue(id, out userInfo);
 		return userInfo;
 	}
 
-	public static UserInfo getOrCreateUserInfo(int id)
+	public static UserInfo getOrCreateUserInfo(long id)
 	{
 		UserInfo userInfo = null;
 		if(!userDict.TryGetValue(id, out userInfo))

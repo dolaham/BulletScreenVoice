@@ -214,7 +214,7 @@ namespace BulletScreenVoice
 		private void BSVPlugin_ReceivedDanmaku(object sender, BilibiliDM_PluginFramework.ReceivedDanmakuArgs e)
 		{
 			DanmakuModel dm = e.Danmaku;
-			int userId = dm.UserID;
+			long userId = dm.UserID_long;
 
 			switch(dm.MsgType)
 			{
@@ -351,7 +351,7 @@ namespace BulletScreenVoice
 			string userName = dm.UserName;
 			if(string.IsNullOrEmpty(userName))
 			{
-				UserService.UserInfo userInfo = UserService.getUserInfo(dm.UserID);
+				UserService.UserInfo userInfo = UserService.getUserInfo(dm.UserID_long);
 				if(userInfo != null)
 				{
 					userName = userInfo.name;
