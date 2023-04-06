@@ -182,6 +182,8 @@ public class Config
 	public Speed speed = Speed.Speed_10;  // 语速
 	public int voiceType = 0;  // 声音类型
 
+	public double nameInterval = 0;
+
 	public bool useCustomSecret = false;
 	public string secretId = "";
 	public string secretKey = "";

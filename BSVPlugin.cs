@@ -53,7 +53,7 @@ namespace BulletScreenVoice
 			instance = this;
 
 			this.PluginName = "弹幕语音播报";
-			this.PluginVer = "v0.0.1";
+			this.PluginVer = "v0.0.2";
 			this.PluginDesc = "读出观众发送的弹幕文字";
 			this.PluginAuth = "毘耶离";
 			this.PluginCont = "dolaham@qq.com";
@@ -210,6 +210,21 @@ namespace BulletScreenVoice
 		{
 		}
 
+		// 上次弹幕用户id
+		long lastSayUserId;
+		// 上次弹幕时间
+		DateTime lastSayTime;
+
+		// 上次礼物文本模板
+        string lastGiftTemplate;
+        // 上次礼物的用户id
+        long lastGiftUserId;
+		string lastGiftUserName;
+		// 上次礼物名称
+		string lastGiftName;
+		// 上次礼物数量
+		int lastGiftCount;
+
 		// 收到弹幕、礼物等消息
 		private void BSVPlugin_ReceivedDanmaku(object sender, BilibiliDM_PluginFramework.ReceivedDanmakuArgs e)
 		{
@@ -276,9 +291,30 @@ namespace BulletScreenVoice
 						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
 						if(userCfg.readText)
 						{
-							string str = makeStringFromTemplate(dm, userCfg.templateText);
+							string str = null;
+
+							if(dm.UserID_long == lastSayUserId)
+							{
+								// 本次弹幕的用户与上一个弹幕的用户是同一个
+
+								TimeSpan ts = DateTime.Now - lastSayTime;
+								if(ts.TotalSeconds < config.nameInterval)
+								{
+									// 弹幕间隔小于指定值，不添加“用户说”前缀
+									str = dm.CommentText;
+								}
+                            }
+
+							if(string.IsNullOrEmpty(str))
+							{
+                                str = makeStringFromTemplate(dm, userCfg.templateText);
+                            }
+
 							addTTSTask(str);
-						}
+
+							lastSayUserId = dm.UserID_long;
+							lastSayTime = DateTime.Now;
+                        }
 					}
 					break;
 
@@ -289,8 +325,38 @@ namespace BulletScreenVoice
 						Config.UserConfig userCfg = config.userConfigs[userCfgIndex];
 						if(userCfg.readGift)
 						{
-							string str = makeStringFromTemplate(dm, userCfg.templateGift);
-							addTTSTask(str);
+							if(dm.UserID_long == lastGiftUserId && dm.GiftName == lastGiftName)
+							{
+								// 礼物用户与上一次礼物用户是同一个、且礼物相同，则合并礼物数量
+								lastGiftCount += dm.GiftCount;
+
+								// 延迟一段时间再一次性读出礼物信息
+								makeDelayGiftVoiceTimer(1);
+							}
+							else
+							{
+								// 礼物用户与上次用户不同、或者礼物不同
+
+								if(lastGiftUserId != 0)
+								{
+									// 还有待读的礼物信息，则现在读出
+
+									clearDelayGiftVoiceTimer();
+
+									string str = makeStringFromTemplate(lastGiftTemplate, lastGiftUserName, "", lastGiftName, lastGiftCount, "");
+                                    addTTSTask(str);
+                                }
+
+								// 缓存礼物信息
+								lastGiftTemplate = userCfg.templateGift;
+                                lastGiftUserId = dm.UserID_long;
+								lastGiftUserName = dm.UserName;
+								lastGiftName = dm.GiftName;
+								lastGiftCount = dm.GiftCount;
+
+								// 延迟一段时间后再读出
+								makeDelayGiftVoiceTimer(1);
+                            }
 						}
 					}
 					break;
@@ -315,7 +381,46 @@ namespace BulletScreenVoice
 			}
 		}
 
-		static UserConfigIndex getUserConfigIndex(int id)
+		Timer timerDelayGiftVoice;
+
+        void clearDelayGiftVoiceTimer()
+		{
+			if(timerDelayGiftVoice != null)
+			{
+				timerDelayGiftVoice.Stop();
+				timerDelayGiftVoice.Dispose();
+				timerDelayGiftVoice = null;
+			}
+		}
+
+		void makeDelayGiftVoiceTimer(float delay)
+		{
+			clearDelayGiftVoiceTimer();
+
+            timerDelayGiftVoice = new Timer();
+			timerDelayGiftVoice.Interval = (int)(delay * 1000);
+			timerDelayGiftVoice.Tick += DelayGiftVoiceFunc;
+
+			timerDelayGiftVoice.Start();
+        }
+
+		void DelayGiftVoiceFunc(object sender, EventArgs e)
+		{
+			if(lastGiftUserId != 0)
+			{
+                string str = makeStringFromTemplate(lastGiftTemplate, lastGiftUserName, "", lastGiftName, lastGiftCount, "");
+                addTTSTask(str);
+
+				lastGiftUserId = 0;
+                lastGiftUserName = "";
+                lastGiftName = "";
+				lastGiftCount = 0;
+            }
+
+			clearDelayGiftVoiceTimer();
+        }
+
+        static UserConfigIndex getUserConfigIndex(int id)
 		{
 			UserService.UserInfo userInfo = UserService.getUserInfo(id);
 			return getUserConfigIndex(userInfo);
@@ -364,14 +469,19 @@ namespace BulletScreenVoice
 				roomId = this.roomId;
 			}
 
-			string str = template.Replace("{user}", userName);
-			str = str.Replace("{text}", dm.CommentText);
-			str = str.Replace("{gift}", dm.GiftName);
-			str = str.Replace("{count}", dm.GiftCount.ToString());
-			str = str.Replace("{roomId}", roomId);
-
-			return str;
+			return makeStringFromTemplate(template, userName, dm.CommentText, dm.GiftName, dm.GiftCount, roomId);
 		}
+
+		string makeStringFromTemplate(string template, string userName, string commentText, string giftName, int giftCount, string roomId)
+		{
+            string str = template.Replace("{user}", userName);
+            str = str.Replace("{text}", commentText);
+            str = str.Replace("{gift}", giftName);
+            str = str.Replace("{count}", giftCount.ToString());
+            str = str.Replace("{roomId}", roomId);
+
+            return str;
+        }
 
 		// 添加一个文本转语音任务
 		void addTTSTask(string text)

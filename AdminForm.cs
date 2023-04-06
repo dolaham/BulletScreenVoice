@@ -252,6 +252,8 @@ namespace BulletScreenVoice
 			checkBoxReadLiveEnd.Checked = cfg.readLiveEnd;
 			textBoxLiveEndTemplate.Text = cfg.templateLiveEnd;
 
+			textBoxNameInterval.Text = cfg.nameInterval.ToString();
+
 			// 音频配置
 
 			// 音频设备列表
@@ -336,6 +338,8 @@ namespace BulletScreenVoice
 
 			cfg.readLiveEnd = checkBoxReadLiveEnd.Checked;
 			cfg.templateLiveEnd = textBoxLiveEndTemplate.Text;
+
+			double.TryParse(textBoxNameInterval.Text, out cfg.nameInterval);
 
 			// 音频配置
 
