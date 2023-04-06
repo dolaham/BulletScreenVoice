@@ -279,12 +279,20 @@ namespace BulletScreenVoice
 
 			// 声音类型
 			comboBoxVoiceTypes.Items.Clear();
-			for(int i = 0; i < (int)Config.VoiceType.Count; ++i)
+			for(int i = 0; i < (int)Config.VoiceTypeNames.Length; ++i)
 			{
 				string voiceTypeName = Config.VoiceTypeNames[i];
 				comboBoxVoiceTypes.Items.Add(voiceTypeName);
+            }
+
+			for(int i = 0; i < Config.VoiceType.Length; ++i)
+			{
+				if(cfg.voiceType == Config.VoiceType[i])
+				{
+                    comboBoxVoiceTypes.SelectedIndex = i;
+					break;
+                }
 			}
-			comboBoxVoiceTypes.SelectedIndex = (int)cfg.voiceType;
 
 			// 高级
 
@@ -339,8 +347,11 @@ namespace BulletScreenVoice
 			// 语速
 			cfg.speed = (Config.Speed)trackBarSpeed.Value;
 
-			// 声音类型
-			cfg.voiceType = (Config.VoiceType)comboBoxVoiceTypes.SelectedIndex;
+			if(0 <= comboBoxVoiceTypes.SelectedIndex && comboBoxVoiceTypes.SelectedIndex < Config.VoiceType.Length)
+			{
+                // 声音类型
+                cfg.voiceType = Config.VoiceType[comboBoxVoiceTypes.SelectedIndex];
+            }
 
 			// 高级
 
