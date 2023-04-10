@@ -136,7 +136,7 @@ namespace BulletScreenVoice
 				string str = config.templateConnect.Replace("{roomId}", roomId);
 				addTTSTask(str);
 			}
-		}
+        }
 
 		// 与直播间断开连接
 		private void BSVPlugin_Disconnected(object sender, BilibiliDM_PluginFramework.DisconnectEvtArgs e)
@@ -381,14 +381,14 @@ namespace BulletScreenVoice
 			}
 		}
 
-		Timer timerDelayGiftVoice;
+		System.Timers.Timer timerDelayGiftVoice;
 
         void clearDelayGiftVoiceTimer()
 		{
 			if(timerDelayGiftVoice != null)
 			{
 				timerDelayGiftVoice.Stop();
-				timerDelayGiftVoice.Dispose();
+				timerDelayGiftVoice.Close();
 				timerDelayGiftVoice = null;
 			}
 		}
@@ -397,9 +397,11 @@ namespace BulletScreenVoice
 		{
 			clearDelayGiftVoiceTimer();
 
-            timerDelayGiftVoice = new Timer();
-			timerDelayGiftVoice.Interval = (int)(delay * 1000);
-			timerDelayGiftVoice.Tick += DelayGiftVoiceFunc;
+            timerDelayGiftVoice = new System.Timers.Timer();
+			timerDelayGiftVoice.AutoReset = false;
+
+            timerDelayGiftVoice.Interval = (int)(delay * 1000);
+			timerDelayGiftVoice.Elapsed += DelayGiftVoiceFunc;
 
 			timerDelayGiftVoice.Start();
         }
