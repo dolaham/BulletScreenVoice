@@ -149,6 +149,9 @@
             this.label36 = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxFollowTemplate = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.checkBoxReadFollow = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -193,7 +196,7 @@
             this.tabControl1.Location = new System.Drawing.Point(5, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(796, 401);
+            this.tabControl1.Size = new System.Drawing.Size(796, 445);
             this.tabControl1.TabIndex = 2;
             // 
             // tabGeneral
@@ -204,7 +207,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(788, 372);
+            this.tabGeneral.Size = new System.Drawing.Size(788, 416);
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.Text = "常规";
             this.tabGeneral.UseVisualStyleBackColor = true;
@@ -230,7 +233,7 @@
             this.tabControl2.Location = new System.Drawing.Point(6, 41);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(773, 281);
+            this.tabControl2.Size = new System.Drawing.Size(773, 328);
             this.tabControl2.TabIndex = 13;
             // 
             // tabPage1
@@ -250,7 +253,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(765, 252);
+            this.tabPage1.Size = new System.Drawing.Size(765, 299);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "普通观众";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -376,7 +379,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(765, 252);
+            this.tabPage4.Size = new System.Drawing.Size(765, 299);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "总督";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -502,7 +505,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(765, 252);
+            this.tabPage5.Size = new System.Drawing.Size(765, 299);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "提督";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -628,7 +631,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(765, 252);
+            this.tabPage6.Size = new System.Drawing.Size(765, 299);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "舰长";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -754,7 +757,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(765, 252);
+            this.tabPage2.Size = new System.Drawing.Size(765, 299);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "老爷";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -880,7 +883,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(765, 252);
+            this.tabPage3.Size = new System.Drawing.Size(765, 299);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "房管";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -991,6 +994,9 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.textBoxFollowTemplate);
+            this.tabPage7.Controls.Add(this.label38);
+            this.tabPage7.Controls.Add(this.checkBoxReadFollow);
             this.tabPage7.Controls.Add(this.textBoxNameInterval);
             this.tabPage7.Controls.Add(this.label37);
             this.tabPage7.Controls.Add(this.textBoxLiveBeginTemplate);
@@ -1008,7 +1014,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(765, 252);
+            this.tabPage7.Size = new System.Drawing.Size(765, 299);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "其它";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1137,7 +1143,7 @@
             // 
             this.textBoxDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDesc.Location = new System.Drawing.Point(41, 324);
+            this.textBoxDesc.Location = new System.Drawing.Point(41, 377);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
             this.textBoxDesc.ReadOnly = true;
@@ -1340,7 +1346,7 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(239, 407);
+            this.buttonOk.Location = new System.Drawing.Point(236, 480);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(142, 31);
             this.buttonOk.TabIndex = 3;
@@ -1350,7 +1356,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(397, 407);
+            this.buttonCancel.Location = new System.Drawing.Point(394, 480);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(142, 31);
             this.buttonCancel.TabIndex = 4;
@@ -1358,11 +1364,37 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // textBoxFollowTemplate
+            // 
+            this.textBoxFollowTemplate.Location = new System.Drawing.Point(238, 267);
+            this.textBoxFollowTemplate.Name = "textBoxFollowTemplate";
+            this.textBoxFollowTemplate.Size = new System.Drawing.Size(507, 25);
+            this.textBoxFollowTemplate.TabIndex = 52;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(146, 272);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(67, 15);
+            this.label38.TabIndex = 51;
+            this.label38.Text = "语音模板";
+            // 
+            // checkBoxReadFollow
+            // 
+            this.checkBoxReadFollow.AutoSize = true;
+            this.checkBoxReadFollow.Location = new System.Drawing.Point(19, 270);
+            this.checkBoxReadFollow.Name = "checkBoxReadFollow";
+            this.checkBoxReadFollow.Size = new System.Drawing.Size(119, 19);
+            this.checkBoxReadFollow.TabIndex = 50;
+            this.checkBoxReadFollow.Text = "读出关注信息";
+            this.checkBoxReadFollow.UseVisualStyleBackColor = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 523);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.tabControl1);
@@ -1521,5 +1553,8 @@
 		private System.Windows.Forms.Label label36;
 		private System.Windows.Forms.TextBox textBoxNameInterval;
 		private System.Windows.Forms.Label label37;
-	}
+        private System.Windows.Forms.TextBox textBoxFollowTemplate;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.CheckBox checkBoxReadFollow;
+    }
 }

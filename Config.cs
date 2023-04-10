@@ -176,6 +176,9 @@ public class Config
 	public bool readLiveEnd = true;
 	public string templateLiveEnd = "直播结束";
 
+	public bool bReadFollow;
+	public string templateFollow = "{user}关注了直播间，感谢{user}关注！";
+
 	public string audioDeviceId;  // 音频设备 guid
 
 	public int volume = 0;  // 音量：0到10之间的整数，默认0
@@ -207,8 +210,7 @@ public class Config
 
 			string str = File.ReadAllText(filePath, System.Text.Encoding.UTF8);
 
-			JsonSerializer js = new JsonSerializer();
-			Config cfg = js.Deserialize(new JsonTextReader(new StringReader(str)), typeof(Config)) as Config;
+			Config cfg = JsonConvert.DeserializeObject<Config>(str);
 			return cfg;
 		}
 		catch (Exception)
@@ -226,12 +228,7 @@ public class Config
 				File.Delete(filePath);
 			}
 
-			StringWriter sw = new StringWriter();
-
-			JsonSerializer js = new JsonSerializer();
-			js.Serialize(new JsonTextWriter(sw), cfg);
-
-			string str = sw.GetStringBuilder().ToString();
+			string str = JsonConvert.SerializeObject(cfg, Formatting.Indented);
 
 			File.WriteAllText(filePath, str, System.Text.Encoding.UTF8);
 

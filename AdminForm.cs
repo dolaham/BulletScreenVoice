@@ -254,6 +254,9 @@ namespace BulletScreenVoice
 
 			textBoxNameInterval.Text = cfg.nameInterval.ToString();
 
+			checkBoxReadFollow.Checked = cfg.bReadFollow;
+			textBoxFollowTemplate.Text = cfg.templateFollow;
+
 			// 音频配置
 
 			// 音频设备列表
@@ -341,10 +344,13 @@ namespace BulletScreenVoice
 
 			double.TryParse(textBoxNameInterval.Text, out cfg.nameInterval);
 
-			// 音频配置
+            cfg.bReadFollow = checkBoxReadFollow.Checked;
+            cfg.templateFollow = textBoxFollowTemplate.Text;
 
-			// 音频设备列表
-			cfg.audioDeviceId = AudioService.allDevices[comboAudioDevices.SelectedIndex];
+            // 音频配置
+
+            // 音频设备列表
+            cfg.audioDeviceId = AudioService.allDevices[comboAudioDevices.SelectedIndex];
 
 			// 音量
 			cfg.volume = trackBarVolume.Value;

@@ -379,6 +379,21 @@ namespace BulletScreenVoice
 					}
 					break;
 			}
+
+			// 互动消息
+			switch(dm.InteractType)
+			{
+				case InteractTypeEnum.Follow:
+					{
+						// 关注
+						if(config.bReadFollow)
+						{
+							string str = makeStringFromTemplate(dm, config.templateFollow);
+							addTTSTask(str);
+                        }
+					}
+					break;
+			}
 		}
 
 		System.Timers.Timer timerDelayGiftVoice;
