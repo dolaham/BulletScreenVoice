@@ -2,12 +2,9 @@
 using Force.Crc32;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BulletScreenVoice
@@ -53,11 +50,12 @@ namespace BulletScreenVoice
 			instance = this;
 
 			this.PluginName = "弹幕语音播报";
-			this.PluginVer = "v0.0.2";
+			this.PluginVer = "v0.0.3";
 			this.PluginDesc = "读出观众发送的弹幕文字";
 			this.PluginAuth = "毘耶离";
 			this.PluginCont = "dolaham@qq.com";
 
+            this.PropertyChanged += BSVPlugin_PropertyChanged;
 			this.Connected += BSVPlugin_Connected;
 			this.Disconnected += BSVPlugin_Disconnected;
 			this.ReceivedDanmaku += BSVPlugin_ReceivedDanmaku;
@@ -82,26 +80,28 @@ namespace BulletScreenVoice
 				config = new Config();
 			}
 
-			if (!AudioService.findAudioDevice(config.audioDeviceId) && AudioService.allDevices.Length > 0)
-			{
-				config.audioDeviceId = AudioService.allDevices[0];
-			}
+            if (!AudioService.findAudioDevice(config.audioDeviceId) && AudioService.allDevices.Length > 0)
+            {
+                config.audioDeviceId = AudioService.allDevices[0];
+            }
 
-			UserService.init();
+            UserService.init();
 		}
 
-		bool loadDlls()
+        private void BSVPlugin_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+			if(e.PropertyName == "Status")
+			{
+				if(this.Status)
+				{
+                    
+                }
+			}
+        }
+
+        bool loadDlls()
 		{
-			string[] dllFilenames = {
-				"Crc32.NET.dll"
-				, "NAudio.dll"
-				, "Pathoschild.Http.Client.dll"
-				, "System.Net.Http.Formatting.dll"
-				, "System.Text.Encodings.Web.dll"
-				, "System.Web.Http.dll"
-				, "System.Web.Http.WebHost.dll"
-				, "TencentCloud.dll"
-			};
+			string[] dllFilenames = Directory.GetFiles(dllDir, "*.dll", SearchOption.AllDirectories);
 
 			string curLoadingDllFilename = "";
 			string curLoadingDllFullFilePath = "";
@@ -111,7 +111,7 @@ namespace BulletScreenVoice
 				for(int i = 0; i < dllFilenames.Length; ++i)
 				{
 					curLoadingDllFilename = dllFilenames[i];
-					curLoadingDllFullFilePath = dllDir + curLoadingDllFilename;
+					curLoadingDllFullFilePath = curLoadingDllFilename;
 					Assembly.LoadFrom(curLoadingDllFullFilePath);
 				}
 			}
@@ -210,8 +210,8 @@ namespace BulletScreenVoice
 		{
 		}
 
-		// 上次弹幕用户id
-		long lastSayUserId;
+		// 上次弹幕用户
+		string lastSayUserName;
 		// 上次弹幕时间
 		DateTime lastSayTime;
 
@@ -293,7 +293,7 @@ namespace BulletScreenVoice
 						{
 							string str = null;
 
-							if(dm.UserID_long == lastSayUserId)
+							if(dm.UserName == lastSayUserName)
 							{
 								// 本次弹幕的用户与上一个弹幕的用户是同一个
 
@@ -305,14 +305,14 @@ namespace BulletScreenVoice
 								}
                             }
 
-							if(string.IsNullOrEmpty(str))
+							if(str == null)
 							{
                                 str = makeStringFromTemplate(dm, userCfg.templateText);
                             }
 
 							addTTSTask(str);
 
-							lastSayUserId = dm.UserID_long;
+							lastSayUserName = dm.UserName;
 							lastSayTime = DateTime.Now;
                         }
 					}

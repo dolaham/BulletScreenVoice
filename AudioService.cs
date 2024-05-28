@@ -59,7 +59,7 @@ public class AudioService
 	public static void grabDevices()
 	{
 		_allDevices = new string[WaveOut.DeviceCount];
-		for(int i = 0; i < allDevices.Length; ++i)
+		for(int i = 0; i < _allDevices.Length; ++i)
 		{
 			WaveOutCapabilities cap = WaveOut.GetCapabilities(i);
 			_allDevices[i] = cap.ProductName;
